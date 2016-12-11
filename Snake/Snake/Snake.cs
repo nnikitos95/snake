@@ -8,7 +8,7 @@ namespace Snake
 {
     class Snake : Figure
     {
-        public Direction direction;
+        Direction direction;
         public Snake(Point tail,int lenght, Direction direction)
         {
             this.direction = direction;
@@ -48,6 +48,17 @@ namespace Snake
                 case ConsoleKey.UpArrow: direction = Direction.UP; break;
                 case ConsoleKey.DownArrow: direction = Direction.DOWN; break;
             }
+        }
+
+        public bool Eat(Point food)
+        {
+            if (pList.Last().getX() == food.getX() && pList.Last().getY() == food.getY())
+            {
+                food.Clear();
+                return true;
+            }
+                
+            else return false;
         }
     }
 }

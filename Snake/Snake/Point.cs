@@ -47,5 +47,13 @@ namespace Snake
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
+        public int getX()
+        {
+            return x;
+        }
+        public int getY()
+        {
+            return y;
+        }
     }
 }
