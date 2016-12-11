@@ -24,7 +24,16 @@ namespace Snake
             food.Draw();
             while (true)
             {
-                if (walls.IsHit(snake) || snake.IsHitTail()) break;
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+
+                    snake.clear();
+                    food.Clear();
+                    Console.SetCursorPosition(W/2-10, H / 2);
+                    Console.WriteLine("Игра закончена");
+                    Console.ReadLine();
+                    break;
+                }
                 if (snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
