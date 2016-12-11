@@ -55,5 +55,23 @@ namespace Snake
         {
             return y;
         }
+        public char getSym()
+        {
+            return sym;
+        }
+        public void setSym(char sym)
+        {
+            this.sym = sym;
+        }
+
+        public bool IsHit(Point food)
+        {
+            if (x == food.x && y == food.y)
+            {
+                food.Clear();
+                return true;
+            }
+            else return false;
+        }
     }
 }

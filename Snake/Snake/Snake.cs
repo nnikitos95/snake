@@ -52,12 +52,13 @@ namespace Snake
 
         public bool Eat(Point food)
         {
-            if (pList.Last().getX() == food.getX() && pList.Last().getY() == food.getY())
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
             {
-                food.Clear();
+                food.setSym(head.getSym());
+                pList.Add(food);
                 return true;
-            }
-                
+            }        
             else return false;
         }
     }
